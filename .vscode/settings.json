@@ -1,0 +1,12 @@
+{
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.validate": ["javascript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "asciidoc.extensions.registerWorkspaceExtensions": true,
+  "asciidoc.preview.refreshInterval": 500,
+
+}

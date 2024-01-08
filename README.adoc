@@ -1,0 +1,166 @@
+= asciidoctor-treeview
+:source-highlighter: highlight.js
+:url-repo: https://github.com/lask79/asciidoctor-treeview
+:url-antora-docs: https://docs.antora.org/antora/3.1
+:toc: preamble
+:toc-title: Contents
+:sectnums:
+:imagesdir: docs/modules/ROOT/images
+
+== Features
+
+[%header,cols="^1a,1a""]
+|===
+|Dark |Light
+|image:treeview-dark.png[width=300px]
+|image:treeview-light.png[width=300px]
+|===
+
+* No scripts used (no highlight.js or custom scripts)
+
+* Generates treeview based on:
+** AsciiTree (using tree command on Linux or Windows)
+
+* Calculates the right icons for folders and files based on:
+** extensions
+** file names
+** folder names
+** language ids
+
+* Uses the same icons as VSCode (uses https://github.com/PKief/vscode-material-icon-theme)
+* Adds styles to the document
+* Supports dark and light mode
+* Uses different icons for dark and light mode
+
+**IN WORK**
+
+* antora support to customize the treeview and css handling
+* symbol-based treeview (#, >, *)
+
+== Installation
+
+add this to your `package.json` to dependencies
+
+```
+npm i asciidoctor-treeview
+```
+
+== Register extension
+
+.Asciidoctor
+[source, javascript]
+----
+const asciidoctor = require('@asciidoctor/core')()
+const asciidoctorTreeView = require('asciidoctor-treeview')
+const registry = asciidoctor.Extensions.create()
+asciidoctorTreeView.register(registry)
+----
+
+.Antora Playbook
+[source, yaml]
+----
+asciidoc:
+  extensions:
+    'asciidoctor-treeview'
+----
+
+.VSCode
+[source,javascript]
+----
+// add this to .asciidoctor/lib/asciidoctor-treeview.js when you have turned on the extension
+module.exports = require('asciidoctor-treeview')
+----
+
+== Usage
+
+[source, plaintext]
+--------
+[treeview]
+----
+.
+├── .asciidoctor
+│   └── lib
+│       └── treeview.js
+├── .vscode
+│   └── settings.json
+├── docs
+│   ├── modules
+│   │   └── ROOT
+│   │       └── images
+│   │           └── treeview.png
+│   └── index.adoc
+├── lib
+│   ├── converter
+│   │   ├── generated
+│   │   │   ├── FileExtensions1ToIcon.js
+│   │   │   ├── FileExtensions2ToIcon.js
+│   │   │   ├── FileNamesToIcon.js
+│   │   │   ├── FolderNamesToIcon.js
+│   │   │   └── LanguagesToIcon.js
+│   │   ├── AsciiTreeConverter.js
+│   │   ├── IconFinder.js
+│   │   └── TreeLineToHtmlConverter.js
+│   ├── css
+│   │   └── treeview.css
+│   ├── parser
+│   │   ├── AsciiTreeParser.js
+│   │   └── TreeLine.js
+│   ├── renderer
+│   │   └── TreeViewRenderer.js
+│   ├── util
+│   │   └── to-proc.js
+│   └── index.js
+├── scripts
+│   └── material-icons-theme-build.js
+├── tests
+│   ├── converter
+│   │   ├── IconFinder.test.js
+│   │   └── TreeLineToHtmlConverter.test.js
+│   ├── inputs
+│   │   ├── index.adoc
+│   │   └── index.html
+│   ├── parser
+│   │   └── AsciiTreeParser.test.js
+│   ├── extension.test.js
+│   └── full.test.js
+├── .editorconfig
+├── .eslintrc
+├── .gitignore
+├── .stylelintrc
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.adoc
+----
+--------
+
+will be rendered to:
+
+image::treeview-dark.png[width=300]
+
+== Configuration
+
+`Default: dark`
+
+* Use `treeview-theme` attribute on document
+
+[source,plaintext]
+----
+:treeview-theme: light
+----
+
+* Use attribute on treeview block
+
+[source,plaintext]
+--------
+[treeview,theme=light]
+----
+<your tree>
+----
+
+[treeview,theme=dark]
+----
+<your tree>
+----
+--------
+
