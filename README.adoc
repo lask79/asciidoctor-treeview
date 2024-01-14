@@ -2,10 +2,14 @@
 :source-highlighter: highlight.js
 :url-repo: https://github.com/lask79/asciidoctor-treeview
 :url-antora-docs: https://docs.antora.org/antora/3.1
-:toc: preamble
+:toc: macro
 :toc-title: Contents
 :sectnums:
 :imagesdir: docs/modules/ROOT/images
+
+image::https://img.shields.io/npm/v/antora-shiki-extension.svg[NPM version]
+
+toc::[]
 
 == Features
 
@@ -19,7 +23,9 @@
 * No scripts used (no highlight.js or custom scripts)
 
 * Generates treeview based on:
-** AsciiTree (using tree command on Linux or Windows)
+** ascii-tree (using tree command on Linux or Windows)
+** symbol based treeview (#, *) or custom symbol
+** autodetects if ascii-tree parser should be used or symbol parser
 
 * Calculates the right icons for folders and files based on:
 ** extensions
@@ -35,7 +41,6 @@
 **IN WORK**
 
 * antora support to customize the treeview and css handling
-* symbol-based treeview (#, >, *)
 
 == Installation
 
@@ -73,73 +78,131 @@ module.exports = require('asciidoctor-treeview')
 
 == Usage
 
+[%header,cols="^1s,4a,2a""]
+|===
+|Type |Source |Result
+
+|ascii-tree
+|
 [source, plaintext]
 --------
 [treeview]
 ----
 .
-├── .asciidoctor
-│   └── lib
-│       └── treeview.js
 ├── .vscode
+│   ├── extensions.json
 │   └── settings.json
-├── docs
-│   ├── modules
-│   │   └── ROOT
-│   │       └── images
-│   │           └── treeview.png
-│   └── index.adoc
-├── lib
-│   ├── converter
-│   │   ├── generated
-│   │   │   ├── FileExtensions1ToIcon.js
-│   │   │   ├── FileExtensions2ToIcon.js
-│   │   │   ├── FileNamesToIcon.js
-│   │   │   ├── FolderNamesToIcon.js
-│   │   │   └── LanguagesToIcon.js
-│   │   ├── AsciiTreeConverter.js
-│   │   ├── IconFinder.js
-│   │   └── TreeLineToHtmlConverter.js
-│   ├── css
-│   │   └── treeview.css
-│   ├── parser
-│   │   ├── AsciiTreeParser.js
-│   │   └── TreeLine.js
-│   ├── renderer
-│   │   └── TreeViewRenderer.js
-│   ├── util
-│   │   └── to-proc.js
-│   └── index.js
-├── scripts
-│   └── material-icons-theme-build.js
-├── tests
-│   ├── converter
-│   │   ├── IconFinder.test.js
-│   │   └── TreeLineToHtmlConverter.test.js
-│   ├── inputs
-│   │   ├── index.adoc
-│   │   └── index.html
-│   ├── parser
-│   │   └── AsciiTreeParser.test.js
-│   ├── extension.test.js
-│   └── full.test.js
+├── data
+│   ├── config
+│   │   ├── default.json
+│   │   ├── full.json
+│   │   └── minimal.json
+│   └── templates
+│       ├── treeview.css.hbs
+│       └── treeview.js.hbs
 ├── .editorconfig
 ├── .eslintrc
 ├── .gitignore
+├── .npmignore
 ├── .stylelintrc
 ├── LICENSE
-├── package-lock.json
-├── package.json
-└── README.adoc
+└── package.json
 ----
 --------
+|image:small-structure-result.png[width=300]
 
-will be rendered to:
+|Hash Symbol
+|
+[source, plaintext]
+--------
+[treeview]
+----
+.
+# .vscode
+## extensions.json
+##  settings.json
+# data
+##  config
+### default.json
+### full.json
+### minimal.json
+## templates
+### treeview.css.hbs
+### treeview.js.hbs
+# .editorconfig
+# .eslintrc
+# .gitignore
+# .npmignore
+# .stylelintrc
+# LICENSE
+# package.json
+----
+--------
+|image:small-structure-result.png[width=300]
 
-image::treeview-dark.png[width=300]
+|* Symbol
+|
+[source, plaintext]
+--------
+[treeview]
+----
+.
+* .vscode
+** extensions.json
+**  settings.json
+* data
+**  config
+*** default.json
+*** full.json
+*** minimal.json
+** templates
+*** treeview.css.hbs
+*** treeview.js.hbs
+* .editorconfig
+* .eslintrc
+* .gitignore
+* .npmignore
+* .stylelintrc
+* LICENSE
+* package.json
+----
+--------
+|image:small-structure-result.png[width=300]
+
+|Custom Symbol
+|
+[source, plaintext]
+--------
+[treeview,symbol="-"]
+----
+.
+- .vscode
+-- extensions.json
+--  settings.json
+- data
+--  config
+--- default.json
+--- full.json
+--- minimal.json
+-- templates
+--- treeview.css.hbs
+--- treeview.js.hbs
+- .editorconfig
+- .eslintrc
+- .gitignore
+- .npmignore
+- .stylelintrc
+- LICENSE
+- package.json
+- test.hcl
+----
+--------
+|image:small-structure-result.png[width=300]
+|===
 
 == Configuration
 
+=== Theme
 `Default: dark`
 
 * Use `treeview-theme` attribute on document
@@ -161,6 +224,24 @@ image::treeview-dark.png[width=300]
 [treeview,theme=dark]
 ----
 <your tree>
+----
+--------
+
+== Symbol Based Parser
+
+* Symbols * and # are already autodetected.
+* If you want to use a custom symbol like '-' then you need to configure it on the treeview block.
+
+
+.Autodetected symbol #
+[source,plaintext]
+--------
+[treeview,symbol="-"]
+----
+.
+- .vscode
+-- extensions.json
+--  settings.json
 ----
 --------
 

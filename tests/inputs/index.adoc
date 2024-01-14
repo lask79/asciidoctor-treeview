@@ -120,6 +120,78 @@
 [treeview]
 README.adoc
 
+.Uses Symbol *
+[treeview]
+----
+.
+* .vscode
+** extensions.json
+**  settings.json
+* data
+**  config
+*** default.json
+*** full.json
+*** minimal.json
+** templates
+*** treeview.css.hbs
+*** treeview.js.hbs
+* .editorconfig
+* .eslintrc
+* .gitignore
+* .npmignore
+* .stylelintrc
+* LICENSE
+* package.json
+----
+
+.Uses Symbol #
+[treeview]
+----
+.
+# .vscode
+## extensions.json
+##  settings.json
+# data
+##  config
+### default.json
+### full.json
+### minimal.json
+## templates
+### treeview.css.hbs
+### treeview.js.hbs
+# .editorconfig
+# .eslintrc
+# .gitignore
+# .npmignore
+# .stylelintrc
+# LICENSE
+# package.json
+----
+
+.Uses Custom Symbol -
+[treeview,symbol="-"]
+----
+.
+- .vscode
+-- extensions.json
+--  settings.json
+- data
+--  config
+--- default.json
+--- full.json
+--- minimal.json
+-- templates
+--- treeview.css.hbs
+--- treeview.js.hbs
+- .editorconfig
+- .eslintrc
+- .gitignore
+- .npmignore
+- .stylelintrc
+- LICENSE
+- package.json
+----
+
 [myCustomBlock]
 ----
 This is a custom block.

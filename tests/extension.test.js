@@ -168,4 +168,38 @@ README.adoc
 
     asciidoctor.convertFile(input, { to_file: false, extension_registry: registry, standalone: true, safe: 'safe', attributes: { linkcss: false } })
   })
+
+  it('render custom symbol', async () => {
+    const registry = asciidoctor.Extensions.create()
+    asciidoctorTreeView.register(registry)
+
+    const source = `
+.Uses Symbol #
+[treeview,symbol="-"]
+----
+root1
+- .vscode
+-- extensions.json
+--  settings.json
+- data
+--  config
+--- default.json
+--- full.json
+--- minimal.json
+-- templates
+--- treeview.css.hbs
+--- treeview.js.hbs
+- .editorconfig
+- .eslintrc
+- .gitignore
+- .npmignore
+- .stylelintrc
+- LICENSE
+- package.json
+- test.hcl
+----`
+
+    const html = asciidoctor.convert(source, { extension_registry: registry })
+    console.log(html)
+  })
 })
