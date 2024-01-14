@@ -7,7 +7,7 @@
 :sectnums:
 :imagesdir: docs/modules/ROOT/images
 
-image::https://img.shields.io/npm/v/antora-shiki-extension.svg[NPM version]
+image::https://img.shields.io/npm/v/asciidoctor-treeview.svg[NPM version]
 
 toc::[]
 
