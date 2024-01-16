@@ -200,6 +200,5 @@ root1
 ----`
 
     const html = asciidoctor.convert(source, { extension_registry: registry })
-    console.log(html)
   })
 })

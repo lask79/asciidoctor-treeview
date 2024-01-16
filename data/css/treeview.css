@@ -14,11 +14,17 @@
   background-color: var(--treeview-background-color, #222);
   color: var(--treeview-font-color, #d8dee9);
   line-height: var(--treeview-line-height, 1);
+  padding: 0.5em;
+  border-radius: 4px;
 }
 
 .tv-line {
   display: inline-flex;
   align-items: center;
+}
+
+.tv-line-element {
+  display: contents;
 }
 
 .tv-line-element > img {

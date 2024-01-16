@@ -4,12 +4,12 @@
 
 [treeview]
 ----
-README.adoc <.> <.>
-README.md <.>
+README.adoc <1> <2>
+README.md <3>
 ----
-<.> Conum 1
-<.> Conum 2
-<.> Conum 3
+<1> Conum 1
+<2> Conum 2
+<3> Conum 3
 
 
 .Test Directory Structure
@@ -205,10 +205,4 @@ README.adoc
 - package.json
 ----
 
-[myCustomBlock]
-----
-This is a custom block.
-Here is a <1> example. <3>
-Another <2> line.
-----
-<1>
+

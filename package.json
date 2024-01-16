@@ -25,7 +25,8 @@
     "prepublishOnly": "npx -y downdoc --prepublish"
   },
   "files": [
-    "lib"
+    "lib",
+    "data"
   ],
   "keywords": [
     "asciidoctor",

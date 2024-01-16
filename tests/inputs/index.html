@@ -435,6 +435,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
 <body class="article">
 <style>.listingblock > .content > pre.treeview[data-theme="dark"] {
@@ -453,11 +455,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   background-color: var(--treeview-background-color, #222);
   color: var(--treeview-font-color, #d8dee9);
   line-height: var(--treeview-line-height, 1);
+  padding: 0.5em;
 }
 
 .tv-line {
   display: inline-flex;
   align-items: center;
+}
+
+.tv-line-element {
+  display: contents;
 }
 
 .tv-line-element > img {
@@ -468,11 +475,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .tv-line-element > .tv-item-name {
   margin-left: var(--treeview-item-name-offset, 5px);
 }
+
 </style>
 <div id="header">
 <h1>Test</h1>
 </div>
 <div id="content">
+<div class="listingblock"><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span>&nbsp;<i class="conum" data-value="1"></i><b>(1)</b>&nbsp;<i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/markdown.svg" alt="markdown.svg"><span class="tv-item-name">README.md</span></span>&nbsp;<i class="conum" data-value="3"></i><b>(3)</b></span></pre></div></div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Conum 1</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Conum 2</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Conum 3</td>
+</tr>
+</table>
+</div>
 <div class="listingblock"><div class="title">Test Directory Structure</div><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.asciidoctor</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-lib-open.svg" alt="folder-lib-open.svg"><span class="tv-item-name">lib</span></span></span>
@@ -526,8 +552,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package-lock.json</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span>
-</pre></div></div>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="treeview" data-theme="light"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.asciidoctor</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-lib-open.svg" alt="folder-lib-open.svg"><span class="tv-item-name">lib</span></span></span>
@@ -581,10 +606,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package-lock.json</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span>
-</pre></div></div>
-<div class="listingblock"><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span>
-</pre></div></div>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span></pre></div></div>
 <div class="listingblock"><div class="title">Uses Symbol *</div><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
@@ -603,8 +626,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-</pre></div></div>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span></pre></div></div>
 <div class="listingblock"><div class="title">Uses Symbol #</div><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
@@ -623,8 +645,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-</pre></div></div>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span></pre></div></div>
 <div class="listingblock"><div class="title">Uses Custom Symbol -</div><div class="content"><pre class="treeview" data-theme="dark"><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
@@ -643,23 +664,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
 <span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-</pre></div></div>
-<div class="listingblock">
-<div class="content">
-<pre>This is a custom block.
-Here is a &lt;1&gt; example. <b class="conum">(3)</b>
-Another &lt;2&gt; line.</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>&lt;1&gt;</p>
-</div>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span></pre></div></div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-14 14:19:42 +0100
+Last updated 2024-01-16 22:24:09 +0100
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>

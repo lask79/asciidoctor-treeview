@@ -1,5 +1,4 @@
 = asciidoctor-treeview
-:source-highlighter: highlight.js
 :url-repo: https://github.com/lask79/asciidoctor-treeview
 :url-antora-docs: https://docs.antora.org/antora/3.1
 :toc: macro
@@ -21,6 +20,7 @@ toc::[]
 |===
 
 * No scripts used (no highlight.js or custom scripts)
+* Supports Antora and Asciidoctor standalone
 
 * Generates treeview based on:
 ** ascii-tree (using tree command on Linux or Windows)
@@ -39,19 +39,15 @@ toc::[]
 * Uses different icons for dark and light mode
 * Supports callouts / conums
 
-**IN WORK**
-
-* antora support to customize the treeview and css handling
-
 == Installation
-
-add this to your `package.json` to dependencies
 
 ```
 npm i asciidoctor-treeview
 ```
 
 == Register extension
+
+=== Asciidoctor
 
 .Asciidoctor
 [source, javascript]
@@ -62,13 +58,46 @@ const registry = asciidoctor.Extensions.create()
 asciidoctorTreeView.register(registry)
 ----
 
-.Antora Playbook
+NOTE: The needed css file is added via `DocInfoProcessor`.
+
+=== Antora
+
+==== Antora Playbook
 [source, yaml]
 ----
-asciidoc:
+antora:
   extensions:
-    - 'asciidoctor-treeview'
+    - require: "asciidoctor-treeview"
 ----
+
+WARNING: Do not add the asciidoctor-treeview to the asciidoc.extensions. It will not work because then the needed css will not be added to the site.
+
+==== Add handlebars template
+
+You have to change 1 file in your Antora UI bundle or by overwriting it via supplemental-ui:
+
+* add `{{> treeview-styles }}` to `partials/head-styles.hbs`
+
+If you do not want to change your UI bundle or when you use the default ui bundle you can simply put the following lines into `supplemental-ui/partials/head-styles.hbs` next to your `antora playbook`:
+
+.head-styles.hbs
+[source,html]
+----
+<link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">
+{{> treeview-styles }}
+----
+
+`{{> treeview-styles }}` will be replaced with the content of the file `treeview-styles.hbs` that provided by this extension.
+
+.treeview-styles.hbs
+[source,html]
+----
+<link rel="stylesheet" href="{{{uiRootPath}}}/css/treeview.css">
+----
+
+The `treeview.css` file contains some treeview specific styles that are needed to render the code blocks correctly and overrides some styles defined in the https://docs.antora.org/antora-ui-default/[Antora UI Default].
+
+=== VSCode
 
 .VSCode
 [source,javascript]
