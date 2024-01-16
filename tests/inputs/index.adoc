@@ -1,4 +1,16 @@
 = Test
+:source-highlighter: highlight.js
+:icons: font
+
+[treeview]
+----
+README.adoc <.> <.>
+README.md <.>
+----
+<.> Conum 1
+<.> Conum 2
+<.> Conum 3
+
 
 .Test Directory Structure
 [treeview]

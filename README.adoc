@@ -37,6 +37,7 @@ toc::[]
 * Adds styles to the document
 * Supports dark and light mode
 * Uses different icons for dark and light mode
+* Supports callouts / conums
 
 **IN WORK**
 

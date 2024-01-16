@@ -1,8 +1,10 @@
 = Test
+:source-highlighter: highlight.js
 
 .Test Directory Structure
 [treeview]
 ----
+.
 ├── .vscode
 │   ├── extensions.json
 │   └── settings.json
@@ -57,3 +59,13 @@ Here is a <1> example. <3>
 Another <2> line.
 ----
 <1>
+
+[source, java]
+----
+public class Foo { // <1>
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
+----
+<1> test
