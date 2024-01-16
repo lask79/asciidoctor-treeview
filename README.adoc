@@ -10,6 +10,8 @@ image::https://img.shields.io/npm/v/asciidoctor-treeview.svg[NPM version]
 
 toc::[]
 
+`asciidoctor-treeview` is an extension for `asciidoctor.js` and `Antora` that generates a treeview based on several input formats and displays beautiful icons for folders and files.
+
 == Features
 
 [%header,cols="^1a,1a""]
