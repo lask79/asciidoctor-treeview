@@ -2,7 +2,7 @@ const { describe, it, expect, beforeEach } = require('@jest/globals')
 const matchers = require('jest-extended')
 expect.extend(matchers)
 
-const { getIconForFile, getIconForFolder, getIconForOpenFolder } = require('../../lib/converter/IconFinder')
+const { getIconForFile, getIconForFolder, getIconForOpenFolder } = require('../../lib/converter/icon-finder')
 describe('IconFinder', () => {
   describe('getIconForFile', () => {
     it('throws error when empty string is passed', () => {
