@@ -1,16 +1,16 @@
-.listingblock > .content > pre.treeview[data-theme="dark"] {
+.listingblock.treeview.dark {
   --treeview-background-color: #222;
   --treeview-font-color: #d8dee9;
   --treeview-line-height: 1;
 }
 
-.listingblock > .content > pre.treeview[data-theme="light"] {
+.listingblock.treeview.light {
   --treeview-background-color: #f7f7f8;
   --treeview-font-color: #222;
   --treeview-line-height: 1;
 }
 
-.listingblock > .content > pre.treeview {
+.listingblock.treeview > .content > pre {
   background-color: var(--treeview-background-color, #222);
   color: var(--treeview-font-color, #d8dee9);
   line-height: var(--treeview-line-height, 1);

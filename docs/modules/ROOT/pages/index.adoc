@@ -1,71 +1,243 @@
 = Test
 :source-highlighter: highlight.js
+:icons: font
+
+== Test
+
+[treeview, theme=dark]
+----
+README.adoc <1> <2>
+README.md <3>
+----
+<1> Conum 1
+<2> Conum 2
+<3> Conum 3
+
 
 .Test Directory Structure
 [treeview]
 ----
 .
-├── .vscode
-│   ├── extensions.json
-│   └── settings.json
-├── data
-│   ├── config
-│   │   ├── default.json
-│   │   ├── full.json
-│   │   └── minimal.json
-│   └── templates
-│       ├── treeview.css.hbs
-│       └── treeview.js.hbs
-├── dist
-│   ├── css
-│   │   ├── treeview-default.css
-│   │   └── treeview-min.css
-│   ├── data
-│   │   ├── config
-│   │   │   ├── default.json
-│   │   │   ├── full.json
-│   │   │   └── minimal.json
-│   │   └── templates
-│   │       ├── treeview.css.hbs
-│   │       └── treeview.js.hbs
-│   ├── js
-│   │   ├── treeview-default.js
-│   │   └── treeview-min.js
+├── .asciidoctor
 │   └── lib
-│       ├── css-generator.js
-│       ├── generator.js
-│       └── rules-generator.js
+│       └── treeview.js
+├── .vscode
+│   └── settings.json
+├── docs
+│   ├── modules
+│   │   └── ROOT
+│   │       └── images
+│   │           └── treeview.png
+│   └── index.adoc
 ├── lib
-│   ├── css-generator.js
-│   ├── rules-generator.js
-│   └── treeview-assets-generator.js
+│   ├── converter
+│   │   ├── generated
+│   │   │   ├── FileExtensions1ToIcon.js
+│   │   │   ├── FileExtensions2ToIcon.js
+│   │   │   ├── FileNamesToIcon.js
+│   │   │   ├── FolderNamesToIcon.js
+│   │   │   └── LanguagesToIcon.js
+│   │   ├── AsciiTreeConverter.js
+│   │   ├── IconFinder.js
+│   │   └── TreeLineToHtmlConverter.js
+│   ├── css
+│   │   └── treeview.css
+│   ├── parser
+│   │   ├── AsciiTreeParser.js
+│   │   └── TreeLine.js
+│   ├── renderer
+│   │   └── TreeViewRenderer.js
+│   ├── util
+│   │   └── to-proc.js
+│   └── index.js
+├── scripts
+│   └── material-icons-theme-build.js
+├── tests
+│   ├── converter
+│   │   ├── IconFinder.test.js
+│   │   └── TreeLineToHtmlConverter.test.js
+│   ├── inputs
+│   │   ├── index.adoc
+│   │   └── index.html
+│   ├── parser
+│   │   └── AsciiTreeParser.test.js
+│   ├── extension.test.js
+│   └── full.test.js
 ├── .editorconfig
 ├── .eslintrc
 ├── .gitignore
-├── .npmignore
 ├── .stylelintrc
 ├── LICENSE
+├── package-lock.json
 ├── package.json
-└── test.hcl
+└── README.adoc
+----
+
+[treeview,theme=light]
+----
+.
+├── .asciidoctor
+│   └── lib
+│       └── treeview.js
+├── .vscode
+│   └── settings.json
+├── docs
+│   ├── modules
+│   │   └── ROOT
+│   │       └── images
+│   │           └── treeview.png
+│   └── index.adoc
+├── lib
+│   ├── converter
+│   │   ├── generated
+│   │   │   ├── FileExtensions1ToIcon.js
+│   │   │   ├── FileExtensions2ToIcon.js
+│   │   │   ├── FileNamesToIcon.js
+│   │   │   ├── FolderNamesToIcon.js
+│   │   │   └── LanguagesToIcon.js
+│   │   ├── AsciiTreeConverter.js
+│   │   ├── IconFinder.js
+│   │   └── TreeLineToHtmlConverter.js
+│   ├── css
+│   │   └── treeview.css
+│   ├── parser
+│   │   ├── AsciiTreeParser.js
+│   │   └── TreeLine.js
+│   ├── renderer
+│   │   └── TreeViewRenderer.js
+│   ├── util
+│   │   └── to-proc.js
+│   └── index.js
+├── scripts
+│   └── material-icons-theme-build.js
+├── tests
+│   ├── converter
+│   │   ├── IconFinder.test.js
+│   │   └── TreeLineToHtmlConverter.test.js
+│   ├── inputs
+│   │   ├── index.adoc
+│   │   └── index.html
+│   ├── parser
+│   │   └── AsciiTreeParser.test.js
+│   ├── extension.test.js
+│   └── full.test.js
+├── .editorconfig
+├── .eslintrc
+├── .gitignore
+├── .stylelintrc
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.adoc
 ----
 
 [treeview]
 README.adoc
 
-[myCustomBlock]
+.Uses Symbol *
+[treeview]
 ----
-This is a custom block.
-Here is a <1> example. <3>
-Another <2> line.
+.
+* .vscode
+** extensions.json
+**  settings.json
+* data
+**  config
+*** default.json
+*** full.json
+*** minimal.json
+** templates
+*** treeview.css.hbs
+*** treeview.js.hbs
+* .editorconfig
+* .eslintrc
+* .gitignore
+* .npmignore
+* .stylelintrc
+* LICENSE
+* package.json
 ----
-<1>
 
-[source, java]
+
+.Uses Symbol #
+[treeview]
 ----
-public class Foo { // <1>
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
-}
+.
+# .vscode
+## extensions.json
+##  settings.json
+# data
+##  config
+### default.json
+### full.json
+### minimal.json
+## templates
+### treeview.css.hbs
+### treeview.js.hbs
+# .editorconfig
+# .eslintrc
+# .gitignore
+# .npmignore
+# .stylelintrc
+# LICENSE
+# package.json
 ----
-<1> test
+
+.Uses Custom Symbol -
+[treeview,symbol="-"]
+----
+.
+- .vscode
+-- extensions.json
+--  settings.json
+- data
+--  config
+--- default.json
+--- full.json
+--- minimal.json
+-- templates
+--- treeview.css.hbs
+--- treeview.js.hbs
+- .editorconfig
+- .eslintrc
+- .gitignore
+- .npmignore
+- .stylelintrc
+- LICENSE
+- package.json
+----
+
+
+// add table with a treeview block
+[%header, cols="1,1,3a"]
+|===
+|Header column 1 |Header column 2 |Header column 3
+
+|Cell 1, row 1
+|Cell 2, row 1
+|
+.Uses Symbol #
+[treeview]
+----
+.
+# .vscode
+## extensions.json
+##  settings.json
+# data
+##  config
+### default.json
+### full.json
+### minimal.json
+## templates
+### treeview.css.hbs
+### treeview.js.hbs
+# .editorconfig
+# .eslintrc
+# .gitignore
+# .npmignore
+# .stylelintrc
+# LICENSE
+# package.json <1>
+----
+<1> asdasd
+|===

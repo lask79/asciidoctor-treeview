@@ -2,7 +2,9 @@
 :source-highlighter: highlight.js
 :icons: font
 
-[treeview]
+== Test
+
+[treeview, theme=dark]
 ----
 README.adoc <1> <2>
 README.md <3>
@@ -129,7 +131,7 @@ README.md <3>
 └── README.adoc
 ----
 
-[treeview]
+[treeview,theme=light]
 README.adoc
 
 .Uses Symbol *
@@ -206,3 +208,36 @@ README.adoc
 ----
 
 
+// add table with a treeview block
+[%header, cols="1,1,3a"]
+|===
+|Header column 1 |Header column 2 |Header column 3
+
+|Cell 1, row 1
+|Cell 2, row 1
+|
+.Uses Symbol #
+[treeview]
+----
+.
+# .vscode
+## extensions.json
+##  settings.json
+# data
+##  config
+### default.json
+### full.json
+### minimal.json
+## templates
+### treeview.css.hbs
+### treeview.js.hbs
+# .editorconfig
+# .eslintrc
+# .gitignore
+# .npmignore
+# .stylelintrc
+# LICENSE
+# package.json <1>
+----
+<1> asdasd
+|===
