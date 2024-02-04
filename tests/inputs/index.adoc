@@ -249,3 +249,17 @@ README.adoc
 # .vscode
 
 ----
+
+.Allow comments
+[treeview]
+----
+README.adoc // comment
+----
+
+.Don't show slash to mark folders
+[treeview]
+----
+gulp.d/
+----
+
+

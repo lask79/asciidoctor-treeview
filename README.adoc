@@ -277,3 +277,31 @@ module.exports = require('asciidoctor-treeview')
 ----
 --------
 
+== HowTos
+
+I want to mark a line as folder even when it does not have children::
+Put a `/` at the end of the name.
+Then that line will be marked as a folder.
++
+[source,asciidoc]
+--------
+[treeview]
+----
+.
+# folder/
+# second-folder/
+----
+--------
+
+I want to add comments to a line::
+Put `//` at the end of the line.
+Then that line will be marked as a comment.
++
+[source,asciidoc]
+--------
+[treeview]
+----
+.
+# README.md // this is a comment
+----
+--------
