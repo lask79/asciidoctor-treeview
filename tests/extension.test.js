@@ -153,7 +153,7 @@ README.adoc
       const html = asciidoctor.convert(source, { extension_registry: registry })
       // console.log(html)
 
-      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter/</span></span>')
+      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter</span></span>')
       expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name">converter</span></span>')
     // expect(html).to.contain('<span class="emoji"><img src="https://cdn.jsdelivr.net/npm/twemoji@latest/2/svg/1f604.svg" alt="smile" width="24px" height="24px"></span>')
     })
@@ -214,6 +214,20 @@ root1
 
       const html = asciidoctor.convert(source, { extension_registry: registry })
       expect(html).not.toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name"></span></span>')
+    })
+
+    it('should allow comments with //', async () => {
+      const source = `.Test
+[treeview]
+----
+README.adoc // Comment
+----`
+
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
+      const html = asciidoctor.convert(source, { extension_registry: registry })
+
+      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc // Comment</span></span>')
     })
   })
 })
