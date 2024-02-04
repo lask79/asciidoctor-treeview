@@ -35,25 +35,24 @@ README.adoc
       expect(html).toContain(example3Result)
     })
   })
-})
 
-describe('When is registered', () => {
-  it('should convert README.adoc 1', () => {
-    const source = `.Test
+  describe('When is registered', () => {
+    it('should convert README.adoc 1', () => {
+      const source = `.Test
 [treeview]
 ----
 README.adoc
 ----`
 
-    const registry = asciidoctor.Extensions.create()
-    asciidoctorTreeView.register(registry)
-    const html = asciidoctor.convert(source, { extension_registry: registry })
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
+      const html = asciidoctor.convert(source, { extension_registry: registry })
 
-    expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span>')
-  })
+      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span>')
+    })
 
-  it('should convert bigger structure 1', () => {
-    const source = `.Test
+    it('should convert bigger structure 1', () => {
+      const source = `.Test
 [treeview]
 ----
 .
@@ -78,16 +77,16 @@ README.adoc
 ----
 `
 
-    const registry = asciidoctor.Extensions.create()
-    asciidoctorTreeView.register(registry)
-    const html = asciidoctor.convert(source, { extension_registry: registry })
-    // console.log(html)
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
+      const html = asciidoctor.convert(source, { extension_registry: registry })
+      // console.log(html)
 
     // expect(html).to.contain('<span class="emoji"><img src="https://cdn.jsdelivr.net/npm/twemoji@latest/2/svg/1f604.svg" alt="smile" width="24px" height="24px"></span>')
-  })
+    })
 
-  it('should convert bigger structure 2', () => {
-    const source = `.Test
+    it('should convert bigger structure 2', () => {
+      const source = `.Test
 [treeview,asciitree]
 ----
 .
@@ -136,44 +135,44 @@ README.adoc
 ----
 `
 
-    const registry = asciidoctor.Extensions.create()
-    asciidoctorTreeView.register(registry)
-    const html = asciidoctor.convert(source, { extension_registry: registry })
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
+      const html = asciidoctor.convert(source, { extension_registry: registry })
 
     // expect(html).to.contain('<span class="emoji"><img src="https://cdn.jsdelivr.net/npm/twemoji@latest/2/svg/1f604.svg" alt="smile" width="24px" height="24px"></span>')
-  })
+    })
 
-  it('should convert to folder if a / is used at the end', () => {
-    const source = `[treeview]
+    it('should convert to folder if a / is used at the end', () => {
+      const source = `[treeview]
 ├── converter/
 └── converter
 `
 
-    const registry = asciidoctor.Extensions.create()
-    asciidoctorTreeView.register(registry)
-    const html = asciidoctor.convert(source, { extension_registry: registry })
-    // console.log(html)
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
+      const html = asciidoctor.convert(source, { extension_registry: registry })
+      // console.log(html)
 
-    expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter/</span></span>')
-    expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name">converter</span></span>')
+      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter/</span></span>')
+      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name">converter</span></span>')
     // expect(html).to.contain('<span class="emoji"><img src="https://cdn.jsdelivr.net/npm/twemoji@latest/2/svg/1f604.svg" alt="smile" width="24px" height="24px"></span>')
-  })
+    })
 
-  it('should render full page', async () => {
-    const registry = asciidoctor.Extensions.create()
-    asciidoctorTreeView.register(registry)
+    it('should render full page', async () => {
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
 
-    const input = path.join(__dirname, 'inputs/index.adoc')
-    const output = path.join(__dirname, 'inputs/index.html')
+      const input = path.join(__dirname, 'inputs/index.adoc')
+      const output = path.join(__dirname, 'inputs/index.html')
 
-    asciidoctor.convertFile(input, { to_file: false, extension_registry: registry, standalone: true, safe: 'safe', attributes: { linkcss: false } })
-  })
+      asciidoctor.convertFile(input, { to_file: false, extension_registry: registry, standalone: true, safe: 'safe', attributes: { linkcss: false } })
+    })
 
-  it('render custom symbol', async () => {
-    const registry = asciidoctor.Extensions.create()
-    asciidoctorTreeView.register(registry)
+    it('render custom symbol', async () => {
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
 
-    const source = `
+      const source = `
 .Uses Symbol #
 [treeview,symbol="-"]
 ----
@@ -199,6 +198,22 @@ root1
 - test.hcl
 ----`
 
-    const html = asciidoctor.convert(source, { extension_registry: registry })
+      const html = asciidoctor.convert(source, { extension_registry: registry })
+    })
+
+    it('should not render icon in empty line', async () => {
+      const registry = asciidoctor.Extensions.create()
+      asciidoctorTreeView.register(registry)
+
+      const source = `
+.Uses Symbol #
+[treeview,symbol="-"]
+----
+
+----`
+
+      const html = asciidoctor.convert(source, { extension_registry: registry })
+      expect(html).not.toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name"></span></span>')
+    })
   })
 })

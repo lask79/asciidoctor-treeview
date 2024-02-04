@@ -241,3 +241,11 @@ README.adoc
 ----
 <1> asdasd
 |===
+
+.Contains empty line
+[treeview]
+----
+.
+# .vscode
+
+----
