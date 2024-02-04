@@ -14,19 +14,46 @@ toc::[]
 
 == Features
 
-[%header,cols="^1a,1a""]
+[%header,cols="2a,2a""]
 |===
-|Dark |Light
-|image:treeview-dark.png[width=300px]
-|image:treeview-light.png[width=300px]
+|Source |Result
+
+|
+[source, plaintext]
+--------
+[treeview]
+----
+.
+* .vscode
+** extensions.json
+**  settings.json
+* data
+**  config
+*** default.json
+*** full.json
+*** minimal.json
+** templates
+*** treeview.css.hbs
+*** treeview.js.hbs
+* .editorconfig
+* .eslintrc
+* .gitignore
+* .npmignore
+* .stylelintrc
+* LICENSE
+* package.json
+----
+--------
+|image:small-structure-result.png[width=300]
+
 |===
 
 * No scripts used (no highlight.js or custom scripts)
 * Supports Antora and Asciidoctor standalone
 
 * Generates treeview based on:
-** ascii-tree (using tree command on Linux or Windows)
 ** symbol based treeview (#, *) or custom symbol
+** ascii-tree (using tree command on Linux or Windows)
 ** autodetects if ascii-tree parser should be used or symbol parser
 
 * Calculates the right icons for folders and files based on:
@@ -40,6 +67,15 @@ toc::[]
 * Supports dark and light mode
 * Uses different icons for dark and light mode
 * Supports callouts / conums
+* Dark and light mode
++
+[%header,cols="^1a,1a""]
+|===
+|Dark |Light
+|image:treeview-dark.png[width=300px]
+|image:treeview-light.png[width=300px]
+|===
+
 
 == Installation
 
@@ -305,3 +341,13 @@ Then that line will be marked as a comment.
 # README.md // this is a comment
 ----
 --------
+
+== Changelog
+
+.v1.0.0-alpha.6
+* Features
+** allow comments on lines https://github.com/lask79/asciidoctor-treeview/pull/6[(#6)]
+** mark lines as folders (see HowTos)
+
+* Fixes
+** do not render empty lines as files without name allow comments on lines https://github.com/lask79/asciidoctor-treeview/pull/5[(#5)]
