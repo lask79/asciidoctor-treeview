@@ -67,6 +67,11 @@ toc::[]
 * Supports dark and light mode
 * Uses different icons for dark and light mode
 * Supports callouts / conums
+* Supports different ways of retrieving the icons:
+** jsdelivr (default) => downloads from CDN
+** embedded => embeds the icons into the css as data uri
+** antora => copies icons into UI catalog
+** <custom_path> => configure your own path or url
 * Dark and light mode
 +
 [%header,cols="^1a,1a""]
@@ -270,7 +275,9 @@ module.exports = require('asciidoctor-treeview')
 
 == Configuration
 
-=== Theme
+=== Asciidoc Attributes
+
+==== treeview-theme
 `Default: dark`
 
 * Use `treeview-theme` attribute on document
@@ -295,11 +302,58 @@ module.exports = require('asciidoctor-treeview')
 ----
 --------
 
+==== treeview-icon-source
+`Default: jsdelivr`
+
+* Use `treeview-icon-source` attribute on document
+* Supported values:
+** `jsdelivr` (default) => downloads from CDN
+** `embedded` => embeds the icons into the css as data-uri
+** `antora` => copies icons into UI catalog
+** `<custom_path>` => configure your own or url to the folder that contains the icons.
+
+*Examples:*
+
+.Embed icons as data-uri in CSS
+[source,plaintext]
+----
+= Document Title
+:treeview-icon-source: embedded
+----
+
+.Use custom url
+[source,plaintext]
+----
+= Document Title
+:treeview-icon-source: https://example.com/cdn/icons
+----
+
+The icon name like file.svg will be added as suffix to the given url.
+
+=== Antora
+
+[source, yaml]
+----
+antora:
+  extensions:
+    - require: "asciidoctor-treeview"
+      icon_source: antora # or embedded or jsdelivr
+----
+
+`Default: antora`
+
+* Use `icon-source` attribute on document
+* Supported values:
+** `antora` (default) => copies icons into UI catalog
+** `jsdelivr` => downloads from CDN
+** `embedded` => embeds the icons into the css as data-uri
+
+WARNING: The asciidoctor attribute `treeview-icon-source` will be ignored when antora is used.
+
 == Symbol Based Parser
 
 * Symbols * and # are already autodetected.
 * If you want to use a custom symbol like '-' then you need to configure it on the treeview block.
-
 
 .Autodetected symbol #
 [source,plaintext]
@@ -343,6 +397,14 @@ Then that line will be marked as a comment.
 --------
 
 == Changelog
+
+.v1.0.0-alpha.7
+* Features
+** add support for different icon sources https://github.com/lask79/asciidoctor-treeview/pull/6[(#6)]
+*** `jsdelivr` (default) => downloads from CDN
+*** `embedded` => embeds the icons into the css as data uri
+*** `antora` => copies icons into UI catalog
+*** `<custom_path>` => configure your own path or url
 
 .v1.0.0-alpha.6
 * Features

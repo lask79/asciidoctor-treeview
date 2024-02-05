@@ -1,6 +1,6 @@
 {
   "name": "asciidoctor-treeview",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "An extension to generate folder treeview with beautiful icons for Asciidoctor.js",
   "author": "Lasse Knudsen <lasse.knudsen79@gmail.com>",
   "main": "lib/index.js",
@@ -52,7 +52,8 @@
     "vscode-icons-js": "^11.6.1"
   },
   "dependencies": {
-    "@asciidoctor/core": "~2.2"
+    "@asciidoctor/core": "~2.2",
+    "handlebars": "^4.7.8"
   },
   "workspaces": [
     "."
