@@ -1,0 +1,59 @@
+.listingblock.treeview.dark {
+  --treeview-background-color: #222;
+  --treeview-font-color: #d8dee9;
+  --treeview-line-height: 1;
+}
+
+.listingblock.treeview.light {
+  --treeview-background-color: #f7f7f8;
+  --treeview-font-color: #222;
+  --treeview-line-height: 1;
+}
+
+.listingblock.treeview > .content > pre {
+  background-color: var(--treeview-background-color, #222);
+  color: var(--treeview-font-color, #d8dee9);
+  line-height: var(--treeview-line-height, 1);
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+.tv-line {
+  display: inline-flex;
+  align-items: center;
+}
+
+.tv-line-element {
+  display: contents;
+}
+
+.tv-line-element > img {
+  height: var(--treeview-icon-height, 18px);
+  width: var(--treeview-icon-width, 18px);
+}
+
+.tv-line-element > .tv-item-name {
+  margin-left: var(--treeview-item-name-offset, 5px);
+}
+
+.tv-icon {
+  height: var(--treeview-icon-height, 18px);
+  width: var(--treeview-icon-width, 18px);
+}
+
+.tv-icon::before {
+  content: "";
+  width: var(--treeview-icon-width, 18px);
+  height: var(--treeview-icon-height, 18px);
+  /* margin-top: 0px; */
+  position: relative;
+  display: inline-flex;
+  /* background-size: var(--treeview-icon-height, 18px); */
+  background-repeat: no-repeat;
+}
+
+{{#each iconRules}}
+.tv-icon.{{this.baseName}}::before {
+  background-image: url('{{{this.url}}}');
+}
+{{/each}}

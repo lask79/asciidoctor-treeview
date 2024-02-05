@@ -476,6 +476,122 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .tv-line-element > .tv-item-name {
   margin-left: var(--treeview-item-name-offset, 5px);
 }
+
+.tv-icon {
+  height: var(--treeview-icon-height, 18px);
+  width: var(--treeview-icon-width, 18px);
+}
+
+.tv-icon::before {
+  content: "";
+  width: var(--treeview-icon-width, 18px);
+  height: var(--treeview-icon-height, 18px);
+  /* margin-top: 0px; */
+  position: relative;
+  display: inline-flex;
+  /* background-size: var(--treeview-icon-height, 18px); */
+  background-repeat: no-repeat;
+}
+
+.tv-icon.asciidoc::before {
+  background-image: url('');
+}
+.tv-icon.markdown::before {
+  background-image: url('');
+}
+.tv-icon.folder-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-lib-open::before {
+  background-image: url('');
+}
+.tv-icon.javascript::before {
+  background-image: url('');
+}
+.tv-icon.folder-vscode-open::before {
+  background-image: url('');
+}
+.tv-icon.json::before {
+  background-image: url('');
+}
+.tv-icon.folder-docs-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-plugin-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-images-open::before {
+  background-image: url('');
+}
+.tv-icon.image::before {
+  background-image: url('');
+}
+.tv-icon.folder-generator-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-css-open::before {
+  background-image: url('');
+}
+.tv-icon.css::before {
+  background-image: url('');
+}
+.tv-icon.folder-utils-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-scripts-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-test-open::before {
+  background-image: url('');
+}
+.tv-icon.html::before {
+  background-image: url('');
+}
+.tv-icon.editorconfig::before {
+  background-image: url('');
+}
+.tv-icon.eslint::before {
+  background-image: url('');
+}
+.tv-icon.git::before {
+  background-image: url('');
+}
+.tv-icon.stylelint::before {
+  background-image: url('');
+}
+.tv-icon.certificate::before {
+  background-image: url('');
+}
+.tv-icon.nodejs::before {
+  background-image: url('');
+}
+.tv-icon.test-js::before {
+  background-image: url('');
+}
+.tv-icon.stylelint_light::before {
+  background-image: url('');
+}
+.tv-icon.folder-database-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-config-open::before {
+  background-image: url('');
+}
+.tv-icon.folder-template-open::before {
+  background-image: url('');
+}
+.tv-icon.handlebars::before {
+  background-image: url('');
+}
+.tv-icon.npm::before {
+  background-image: url('');
+}
+.tv-icon.file::before {
+  background-image: url('');
+}
+.tv-icon.folder::before {
+  background-image: url('');
+}
 </style>
 <div id="header">
 <h1>Test</h1>
@@ -486,8 +602,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="listingblock treeview dark">
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span>&nbsp;<i class="conum" data-value="1"></i><b>(1)</b>&nbsp;<i class="conum" data-value="2"></i><b>(2)</b></span>
-<span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/markdown.svg" alt="markdown.svg"><span class="tv-item-name">README.md</span></span>&nbsp;<i class="conum" data-value="3"></i><b>(3)</b></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc</span></span>&nbsp;<i class="conum" data-value="1"></i><b>(1)</b>&nbsp;<i class="conum" data-value="2"></i><b>(2)</b></span>
+<span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon markdown"></i><span class="tv-item-name">README.md</span></span>&nbsp;<i class="conum" data-value="3"></i><b>(3)</b></span></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -509,195 +625,195 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock treeview dark">
 <div class="title">Test Directory Structure</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.asciidoctor</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-lib-open.svg" alt="folder-lib-open.svg"><span class="tv-item-name">lib</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">treeview.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">settings.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-docs-open.svg" alt="folder-docs-open.svg"><span class="tv-item-name">docs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-plugin-open.svg" alt="folder-plugin-open.svg"><span class="tv-item-name">modules</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">ROOT</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-images-open.svg" alt="folder-images-open.svg"><span class="tv-item-name">images</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │           └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/image.svg" alt="image.svg"><span class="tv-item-name">treeview.png</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">index.adoc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-lib-open.svg" alt="folder-lib-open.svg"><span class="tv-item-name">lib</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-generator-open.svg" alt="folder-generator-open.svg"><span class="tv-item-name">generated</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FileExtensions1ToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FileExtensions2ToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FileNamesToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FolderNamesToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">LanguagesToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">AsciiTreeConverter.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">IconFinder.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeLineToHtmlConverter.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-css-open.svg" alt="folder-css-open.svg"><span class="tv-item-name">css</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/css.svg" alt="css.svg"><span class="tv-item-name">treeview.css</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">parser</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">AsciiTreeParser.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeLine.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">renderer</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeViewRenderer.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-utils-open.svg" alt="folder-utils-open.svg"><span class="tv-item-name">util</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">to-proc.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">index.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-scripts-open.svg" alt="folder-scripts-open.svg"><span class="tv-item-name">scripts</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">material-icons-theme-build.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-test-open.svg" alt="folder-test-open.svg"><span class="tv-item-name">tests</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">IconFinder.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeLineToHtmlConverter.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">inputs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">index.adoc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/html.svg" alt="html.svg"><span class="tv-item-name">index.html</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">parser</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">AsciiTreeParser.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">extension.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">full.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/editorconfig.svg" alt="editorconfig.svg"><span class="tv-item-name">.editorconfig</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/eslint.svg" alt="eslint.svg"><span class="tv-item-name">.eslintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/git.svg" alt="git.svg"><span class="tv-item-name">.gitignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package-lock.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.asciidoctor</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-lib-open"></i><span class="tv-item-name">lib</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">treeview.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-vscode-open"></i><span class="tv-item-name">.vscode</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">settings.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-docs-open"></i><span class="tv-item-name">docs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-plugin-open"></i><span class="tv-item-name">modules</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">ROOT</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-images-open"></i><span class="tv-item-name">images</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │           └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon image"></i><span class="tv-item-name">treeview.png</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">index.adoc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-lib-open"></i><span class="tv-item-name">lib</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">converter</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-generator-open"></i><span class="tv-item-name">generated</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FileExtensions1ToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FileExtensions2ToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FileNamesToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FolderNamesToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">LanguagesToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">AsciiTreeConverter.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">IconFinder.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeLineToHtmlConverter.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-css-open"></i><span class="tv-item-name">css</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon css"></i><span class="tv-item-name">treeview.css</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">parser</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">AsciiTreeParser.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeLine.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">renderer</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeViewRenderer.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-utils-open"></i><span class="tv-item-name">util</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">to-proc.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">index.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-scripts-open"></i><span class="tv-item-name">scripts</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">material-icons-theme-build.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-test-open"></i><span class="tv-item-name">tests</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">converter</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">IconFinder.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeLineToHtmlConverter.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">inputs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">index.adoc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon html"></i><span class="tv-item-name">index.html</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">parser</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">AsciiTreeParser.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">extension.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">full.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon editorconfig"></i><span class="tv-item-name">.editorconfig</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon eslint"></i><span class="tv-item-name">.eslintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon git"></i><span class="tv-item-name">.gitignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon stylelint"></i><span class="tv-item-name">.stylelintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon certificate"></i><span class="tv-item-name">LICENSE</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package-lock.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc</span></span></span></pre>
 </div>
 </div>
 <div class="listingblock treeview light">
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.asciidoctor</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-lib-open.svg" alt="folder-lib-open.svg"><span class="tv-item-name">lib</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">treeview.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">settings.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-docs-open.svg" alt="folder-docs-open.svg"><span class="tv-item-name">docs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-plugin-open.svg" alt="folder-plugin-open.svg"><span class="tv-item-name">modules</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">ROOT</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-images-open.svg" alt="folder-images-open.svg"><span class="tv-item-name">images</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │           └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/image.svg" alt="image.svg"><span class="tv-item-name">treeview.png</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">index.adoc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-lib-open.svg" alt="folder-lib-open.svg"><span class="tv-item-name">lib</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-generator-open.svg" alt="folder-generator-open.svg"><span class="tv-item-name">generated</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FileExtensions1ToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FileExtensions2ToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FileNamesToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">FolderNamesToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">LanguagesToIcon.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">AsciiTreeConverter.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">IconFinder.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeLineToHtmlConverter.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-css-open.svg" alt="folder-css-open.svg"><span class="tv-item-name">css</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/css.svg" alt="css.svg"><span class="tv-item-name">treeview.css</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">parser</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">AsciiTreeParser.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeLine.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">renderer</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">TreeViewRenderer.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-utils-open.svg" alt="folder-utils-open.svg"><span class="tv-item-name">util</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">to-proc.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">index.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-scripts-open.svg" alt="folder-scripts-open.svg"><span class="tv-item-name">scripts</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/javascript.svg" alt="javascript.svg"><span class="tv-item-name">material-icons-theme-build.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-test-open.svg" alt="folder-test-open.svg"><span class="tv-item-name">tests</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/test-js.svg" alt="test-js.svg"><span class="tv-item-name">IconFinder.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/test-js.svg" alt="test-js.svg"><span class="tv-item-name">TreeLineToHtmlConverter.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">inputs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">index.adoc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/html.svg" alt="html.svg"><span class="tv-item-name">index.html</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">parser</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/test-js.svg" alt="test-js.svg"><span class="tv-item-name">AsciiTreeParser.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/test-js.svg" alt="test-js.svg"><span class="tv-item-name">extension.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/test-js.svg" alt="test-js.svg"><span class="tv-item-name">full.test.js</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/editorconfig.svg" alt="editorconfig.svg"><span class="tv-item-name">.editorconfig</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/eslint.svg" alt="eslint.svg"><span class="tv-item-name">.eslintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/git.svg" alt="git.svg"><span class="tv-item-name">.gitignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint_light.svg" alt="stylelint_light.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package-lock.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.asciidoctor</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-lib-open"></i><span class="tv-item-name">lib</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">treeview.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-vscode-open"></i><span class="tv-item-name">.vscode</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">settings.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-docs-open"></i><span class="tv-item-name">docs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-plugin-open"></i><span class="tv-item-name">modules</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">ROOT</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-images-open"></i><span class="tv-item-name">images</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │           └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon image"></i><span class="tv-item-name">treeview.png</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">index.adoc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-lib-open"></i><span class="tv-item-name">lib</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">converter</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-generator-open"></i><span class="tv-item-name">generated</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FileExtensions1ToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FileExtensions2ToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FileNamesToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">FolderNamesToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">LanguagesToIcon.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">AsciiTreeConverter.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">IconFinder.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeLineToHtmlConverter.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-css-open"></i><span class="tv-item-name">css</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon css"></i><span class="tv-item-name">treeview.css</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">parser</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">AsciiTreeParser.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeLine.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">renderer</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">TreeViewRenderer.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-utils-open"></i><span class="tv-item-name">util</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">to-proc.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">index.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-scripts-open"></i><span class="tv-item-name">scripts</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon javascript"></i><span class="tv-item-name">material-icons-theme-build.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-test-open"></i><span class="tv-item-name">tests</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">converter</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon test-js"></i><span class="tv-item-name">IconFinder.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon test-js"></i><span class="tv-item-name">TreeLineToHtmlConverter.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">inputs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">index.adoc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon html"></i><span class="tv-item-name">index.html</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">parser</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon test-js"></i><span class="tv-item-name">AsciiTreeParser.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon test-js"></i><span class="tv-item-name">extension.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon test-js"></i><span class="tv-item-name">full.test.js</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon editorconfig"></i><span class="tv-item-name">.editorconfig</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon eslint"></i><span class="tv-item-name">.eslintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon git"></i><span class="tv-item-name">.gitignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon stylelint_light"></i><span class="tv-item-name">.stylelintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon certificate"></i><span class="tv-item-name">LICENSE</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package-lock.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc</span></span></span></pre>
 </div>
 </div>
 <div class="listingblock treeview light">
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc</span></span></span></pre>
 </div>
 </div>
 <div class="listingblock treeview dark">
 <div class="title">Uses Symbol *</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">settings.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-database-open.svg" alt="folder-database-open.svg"><span class="tv-item-name">data</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-config-open.svg" alt="folder-config-open.svg"><span class="tv-item-name">config</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">default.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">full.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">minimal.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-template-open.svg" alt="folder-template-open.svg"><span class="tv-item-name">templates</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.css.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.js.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/editorconfig.svg" alt="editorconfig.svg"><span class="tv-item-name">.editorconfig</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/eslint.svg" alt="eslint.svg"><span class="tv-item-name">.eslintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/git.svg" alt="git.svg"><span class="tv-item-name">.gitignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-vscode-open"></i><span class="tv-item-name">.vscode</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">extensions.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">settings.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-database-open"></i><span class="tv-item-name">data</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-config-open"></i><span class="tv-item-name">config</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">default.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">full.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">minimal.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-template-open"></i><span class="tv-item-name">templates</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.css.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.js.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon editorconfig"></i><span class="tv-item-name">.editorconfig</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon eslint"></i><span class="tv-item-name">.eslintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon git"></i><span class="tv-item-name">.gitignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon npm"></i><span class="tv-item-name">.npmignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon stylelint"></i><span class="tv-item-name">.stylelintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon certificate"></i><span class="tv-item-name">LICENSE</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package.json</span></span></span></pre>
 </div>
 </div>
 <div class="listingblock treeview dark">
 <div class="title">Uses Symbol #</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">settings.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-database-open.svg" alt="folder-database-open.svg"><span class="tv-item-name">data</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-config-open.svg" alt="folder-config-open.svg"><span class="tv-item-name">config</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">default.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">full.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">minimal.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-template-open.svg" alt="folder-template-open.svg"><span class="tv-item-name">templates</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.css.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.js.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/editorconfig.svg" alt="editorconfig.svg"><span class="tv-item-name">.editorconfig</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/eslint.svg" alt="eslint.svg"><span class="tv-item-name">.eslintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/git.svg" alt="git.svg"><span class="tv-item-name">.gitignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-vscode-open"></i><span class="tv-item-name">.vscode</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">extensions.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">settings.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-database-open"></i><span class="tv-item-name">data</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-config-open"></i><span class="tv-item-name">config</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">default.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">full.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">minimal.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-template-open"></i><span class="tv-item-name">templates</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.css.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.js.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon editorconfig"></i><span class="tv-item-name">.editorconfig</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon eslint"></i><span class="tv-item-name">.eslintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon git"></i><span class="tv-item-name">.gitignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon npm"></i><span class="tv-item-name">.npmignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon stylelint"></i><span class="tv-item-name">.stylelintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon certificate"></i><span class="tv-item-name">LICENSE</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package.json</span></span></span></pre>
 </div>
 </div>
 <div class="listingblock treeview dark">
 <div class="title">Uses Custom Symbol -</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">settings.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-database-open.svg" alt="folder-database-open.svg"><span class="tv-item-name">data</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-config-open.svg" alt="folder-config-open.svg"><span class="tv-item-name">config</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">default.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">full.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">minimal.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-template-open.svg" alt="folder-template-open.svg"><span class="tv-item-name">templates</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.css.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.js.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/editorconfig.svg" alt="editorconfig.svg"><span class="tv-item-name">.editorconfig</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/eslint.svg" alt="eslint.svg"><span class="tv-item-name">.eslintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/git.svg" alt="git.svg"><span class="tv-item-name">.gitignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-vscode-open"></i><span class="tv-item-name">.vscode</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">extensions.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">settings.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-database-open"></i><span class="tv-item-name">data</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-config-open"></i><span class="tv-item-name">config</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">default.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">full.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">minimal.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-template-open"></i><span class="tv-item-name">templates</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.css.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.js.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon editorconfig"></i><span class="tv-item-name">.editorconfig</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon eslint"></i><span class="tv-item-name">.eslintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon git"></i><span class="tv-item-name">.gitignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon npm"></i><span class="tv-item-name">.npmignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon stylelint"></i><span class="tv-item-name">.stylelintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon certificate"></i><span class="tv-item-name">LICENSE</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package.json</span></span></span></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -720,25 +836,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock treeview dark">
 <div class="title">Uses Symbol #</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-vscode-open.svg" alt="folder-vscode-open.svg"><span class="tv-item-name">.vscode</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">extensions.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">settings.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-database-open.svg" alt="folder-database-open.svg"><span class="tv-item-name">data</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-config-open.svg" alt="folder-config-open.svg"><span class="tv-item-name">config</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">default.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">full.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/json.svg" alt="json.svg"><span class="tv-item-name">minimal.json</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-template-open.svg" alt="folder-template-open.svg"><span class="tv-item-name">templates</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.css.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/handlebars.svg" alt="handlebars.svg"><span class="tv-item-name">treeview.js.hbs</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/editorconfig.svg" alt="editorconfig.svg"><span class="tv-item-name">.editorconfig</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/eslint.svg" alt="eslint.svg"><span class="tv-item-name">.eslintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/git.svg" alt="git.svg"><span class="tv-item-name">.gitignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/npm.svg" alt="npm.svg"><span class="tv-item-name">.npmignore</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/stylelint.svg" alt="stylelint.svg"><span class="tv-item-name">.stylelintrc</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/certificate.svg" alt="certificate.svg"><span class="tv-item-name">LICENSE</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/nodejs.svg" alt="nodejs.svg"><span class="tv-item-name">package.json</span></span>&nbsp;<i class="conum" data-value="1"></i><b>(1)</b></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-vscode-open"></i><span class="tv-item-name">.vscode</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">extensions.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">settings.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-database-open"></i><span class="tv-item-name">data</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-config-open"></i><span class="tv-item-name">config</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">default.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">full.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   │   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon json"></i><span class="tv-item-name">minimal.json</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│   └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon folder-template-open"></i><span class="tv-item-name">templates</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       ├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.css.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">│       └──&nbsp;</span><span class="tv-line-element"><i class="tv-icon handlebars"></i><span class="tv-item-name">treeview.js.hbs</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon editorconfig"></i><span class="tv-item-name">.editorconfig</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon eslint"></i><span class="tv-item-name">.eslintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon git"></i><span class="tv-item-name">.gitignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon npm"></i><span class="tv-item-name">.npmignore</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon stylelint"></i><span class="tv-item-name">.stylelintrc</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">├──&nbsp;</span><span class="tv-line-element"><i class="tv-icon certificate"></i><span class="tv-item-name">LICENSE</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon nodejs"></i><span class="tv-item-name">package.json</span></span>&nbsp;<i class="conum" data-value="1"></i><b>(1)</b></span></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -755,21 +871,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock treeview dark">
 <div class="title">Contains empty line</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">.</span></span></span>
-<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name">.vscode</span></span></span>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">.</span></span></span>
+<span class="tv-line"><span class="tv-line-prefix">└──&nbsp;</span><span class="tv-line-element"><i class="tv-icon file"></i><span class="tv-item-name">.vscode</span></span></span>
 <span class="tv-line"></span></pre>
 </div>
 </div>
 <div class="listingblock treeview dark">
 <div class="title">Allow comments</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc // comment</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc // comment</span></span></span></pre>
 </div>
 </div>
 <div class="listingblock treeview dark">
 <div class="title">Don&#8217;t show slash to mark folders</div>
 <div class="content">
-<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder.svg" alt="folder.svg"><span class="tv-item-name">gulp.d</span></span></span></pre>
+<pre><span class="tv-line"><span class="tv-line-prefix"></span><span class="tv-line-element"><i class="tv-icon folder"></i><span class="tv-item-name">gulp.d</span></span></span></pre>
 </div>
 </div>
 </div>
@@ -777,7 +893,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-04 20:23:26 +0100
+Last updated 2024-02-05 22:39:26 +0100
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>

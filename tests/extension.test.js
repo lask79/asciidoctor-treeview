@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-const { unlink, existsSync } = require('fs')
 const path = require('path')
 
 const { describe, it, expect } = require('@jest/globals')
@@ -48,7 +47,7 @@ README.adoc
       asciidoctorTreeView.register(registry)
       const html = asciidoctor.convert(source, { extension_registry: registry })
 
-      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc</span></span>')
+      expect(html).toInclude('<span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc</span></span>')
     })
 
     it('should convert bigger structure 1', () => {
@@ -151,11 +150,9 @@ README.adoc
       const registry = asciidoctor.Extensions.create()
       asciidoctorTreeView.register(registry)
       const html = asciidoctor.convert(source, { extension_registry: registry })
-      // console.log(html)
 
-      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/folder-open.svg" alt="folder-open.svg"><span class="tv-item-name">converter</span></span>')
-      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/file.svg" alt="file.svg"><span class="tv-item-name">converter</span></span>')
-    // expect(html).to.contain('<span class="emoji"><img src="https://cdn.jsdelivr.net/npm/twemoji@latest/2/svg/1f604.svg" alt="smile" width="24px" height="24px"></span>')
+      expect(html).toInclude('<span class="tv-line-element"><i class="tv-icon folder-open"></i><span class="tv-item-name">converter</span></span>')
+      expect(html).toInclude('<span class="tv-line-element"><i class="tv-icon file"></i><span class="tv-item-name">converter</span></span>')
     })
 
     it('should render full page', async () => {
@@ -163,7 +160,6 @@ README.adoc
       asciidoctorTreeView.register(registry)
 
       const input = path.join(__dirname, 'inputs/index.adoc')
-      const output = path.join(__dirname, 'inputs/index.html')
 
       asciidoctor.convertFile(input, { to_file: false, extension_registry: registry, standalone: true, safe: 'safe', attributes: { linkcss: false } })
     })
@@ -227,7 +223,7 @@ README.adoc // Comment
       asciidoctorTreeView.register(registry)
       const html = asciidoctor.convert(source, { extension_registry: registry })
 
-      expect(html).toInclude('<span class="tv-line-element"><img src="https://cdn.jsdelivr.net/npm/material-icon-theme@4.32.0/icons/asciidoc.svg" alt="asciidoc.svg"><span class="tv-item-name">README.adoc // Comment</span></span>')
+      expect(html).toInclude('<span class="tv-line-element"><i class="tv-icon asciidoc"></i><span class="tv-item-name">README.adoc // Comment</span></span>')
     })
   })
 })

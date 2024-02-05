@@ -1,6 +1,7 @@
 = Test
 :source-highlighter: highlight.js
 :icons: font
+:treeview-icon-source: embedded
 
 == Test
 
