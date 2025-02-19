@@ -126,12 +126,30 @@ describe('Antora Extension', () => {
     const antoraOutput = output.split('=== Running Antora ===')[1]?.split('=== Antora Run Complete ===')[0] || '';
     console.log('Antora specific output:', antoraOutput);
     
-    // Check for expected messages in the Antora-specific output
+    // Try to parse lines as JSON first
+    const jsonLines = antoraOutput.split('\n')
+      .map(line => {
+        try {
+          return JSON.parse(line.trim());
+        } catch (e) {
+          return null;
+        }
+      })
+      .filter(line => line !== null);
+    
+    console.log('Parsed JSON lines:', jsonLines);
+    
+    // Check for expected messages in both JSON and plain text
     expectedMessages.forEach(msg => {
-      const found = antoraOutput.toLowerCase().includes(msg.toLowerCase());
-      expect(found).toBe(true, 
+      const foundInJson = jsonLines.some(line => 
+        line.msg && line.msg.toLowerCase().includes(msg.toLowerCase())
+      );
+      const foundInPlainText = antoraOutput.toLowerCase().includes(msg.toLowerCase());
+      
+      expect(foundInJson || foundInPlainText).toBe(true, 
         `Expected to find message: ${msg}\n` +
         `In Antora output:\n${antoraOutput}\n` +
+        `Parsed JSON lines:\n${JSON.stringify(jsonLines, null, 2)}\n` +
         `Full output:\n${output}`);
     });
   });

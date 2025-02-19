@@ -19,6 +19,20 @@ echo "Playbook path: $1"
 ls -l "$1"
 
 echo "=== Running Antora ==="
-npx antora --stacktrace --log-level=info "$1"
+
+# In CI, we need to ensure output is not buffered
+if [ "$CI" = "true" ]; then
+  # Run with unbuffered output and explicit logging
+  PYTHONUNBUFFERED=1 npx antora --stacktrace \
+    --log-level=all \
+    --log-format=json \
+    --fetch \
+    --to-dir=public \
+    --urls-preserve-trailing-slash \
+    "$1" 2>&1
+else
+  # Regular local run
+  npx antora --stacktrace --log-level=info "$1"
+fi
 
 echo "=== Antora Run Complete ==="
