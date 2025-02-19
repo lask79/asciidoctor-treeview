@@ -423,6 +423,12 @@ Then that line will be marked as a comment.
 
 :!sectnums:
 
+=== v1.0.1
+
+* *Improvements*
+** Fixed documentation about how to use the extension in antora
+** Added github actions to validate against asciidoctor, antora and nodejs versions
+
 === v1.0.0
 
 * *Improvements*
