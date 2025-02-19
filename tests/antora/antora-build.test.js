@@ -118,12 +118,21 @@ describe('Antora Extension', () => {
     const infoMessages = logLines.filter(line => line.level === 'info').map(line => line.msg);
     console.log('Info messages found:', infoMessages);
 
-    // More flexible message checking - check raw output directly
+    // First check if Antora actually ran
+    expect(output).toContain('=== Running Antora ===');
+    expect(output).toContain('=== Antora Run Complete ===');
+    
+    // Extract the Antora run output (between the markers)
+    const antoraOutput = output.split('=== Running Antora ===')[1]?.split('=== Antora Run Complete ===')[0] || '';
+    console.log('Antora specific output:', antoraOutput);
+    
+    // Check for expected messages in the Antora-specific output
     expectedMessages.forEach(msg => {
-      const found = output.toLowerCase().includes(msg.toLowerCase());
+      const found = antoraOutput.toLowerCase().includes(msg.toLowerCase());
       expect(found).toBe(true, 
         `Expected to find message: ${msg}\n` +
-        `Raw output:\n${output}`);
+        `In Antora output:\n${antoraOutput}\n` +
+        `Full output:\n${output}`);
     });
   });
 
