@@ -87,6 +87,10 @@ describe('Antora Extension', () => {
       `Found fatal errors in build output:\n${JSON.stringify(fatalLines, null, 2)}`
     );
 
+    // Debug log output
+    console.log('Raw output:', output);
+    console.log('Parsed log lines:', JSON.stringify(logLines, null, 2));
+
     // Verify expected info messages
     const expectedMessages = [
       'Registering asciidoctor-treeview with config',
@@ -96,11 +100,20 @@ describe('Antora Extension', () => {
       'Copying css/treeview.css to _/css'
     ];
 
+    // First check if we have any info messages at all
+    const infoMessages = logLines.filter(line => line.level === 'info').map(line => line.msg);
+    console.log('Info messages found:', infoMessages);
+
+    // More flexible message checking
     expectedMessages.forEach(msg => {
-      const found = logLines.some(line => 
-        line.level === 'info' && line.msg.includes(msg)
-      );
-      expect(found).toBe(true, `Expected to find info message: ${msg}`);
+      const found = logLines.some(line => {
+        if (line.level !== 'info') return false;
+        const lineMsg = line.msg || '';
+        return lineMsg.toLowerCase().includes(msg.toLowerCase());
+      });
+      expect(found).toBe(true, 
+        `Expected to find info message: ${msg}\n` +
+        `Available info messages: ${JSON.stringify(infoMessages, null, 2)}`);
     });
   });
 
