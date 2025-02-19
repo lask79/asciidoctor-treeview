@@ -43,4 +43,7 @@ jobs:
           npm install --no-save @asciidoctor/core@~2.2
         
       - name: Run Antora tests
-        run: npx jest tests/antora 
+        env:
+          ANTORA_LOG_LEVEL: info
+          NODE_DEBUG: '*'
+        run: npx jest tests/antora --verbose
