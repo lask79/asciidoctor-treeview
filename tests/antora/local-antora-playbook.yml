@@ -1,0 +1,31 @@
+site:
+  title: Example Project
+  start_page: treeview:ROOT:index.adoc
+  url: /
+
+urls:
+  latest_version_segment_strategy: redirect:from
+  latest_version_segment: latest
+
+output:
+  dir: ./public
+
+content:
+  sources:
+  - url: "./../../"
+    branches: HEAD
+    start_path: docs
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+
+runtime:
+  log:
+    level: info
+
+antora:
+  extensions:
+    - "asciidoctor-treeview"
