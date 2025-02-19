@@ -43,16 +43,4 @@ jobs:
           npm install --no-save @asciidoctor/core@~2.2
         
       - name: Run Antora tests
-        env:
-          # Force CI mode and logging settings
-          CI: "true"
-          FORCE_COLOR: "1"
-          ANTORA_LOG_FORMAT: "json"
-          ANTORA_LOG_LEVEL: "all"
-          DEBUG: "antora:*"
-        run: |
-          # Make the test script executable
-          chmod +x tests/antora/run-antora.sh
-          
-          # Run tests with CI-specific settings
-          npx jest tests/antora --verbose --no-colors
+        run: npx jest tests/antora
