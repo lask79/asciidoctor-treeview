@@ -34,7 +34,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm install
         
       - name: Install specific Antora version
         run: |

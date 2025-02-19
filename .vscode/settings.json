@@ -8,4 +8,5 @@
   },
   "asciidoc.extensions.registerWorkspaceExtensions": true,
   "asciidoc.preview.refreshInterval": 500,
+  "jestTestExplorer.pathToJest": "node_modules/.bin/jest",
 }
