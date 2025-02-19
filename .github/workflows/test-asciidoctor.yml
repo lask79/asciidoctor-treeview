@@ -23,18 +23,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-        include:
-          # Test with Asciidoctor 2.2 on all Node versions
-          - asciidoctor-version: '~2.2'
-            node-version: '18.x'
-          - asciidoctor-version: '~2.2'
-            node-version: '20.x'
-          - asciidoctor-version: '~2.2'
-            node-version: '22.x'
-          # Only test Asciidoctor 3.0 on Node 20 for now as it's experimental
-          - asciidoctor-version: '~3.0'
-            node-version: '20.x'
-            experimental: true
+        asciidoctor-version: ['~2.2', '~3.0']
 
     steps:
       - uses: actions/checkout@v4
@@ -51,5 +40,4 @@ jobs:
         run: npm install --no-save @asciidoctor/core@${{ matrix.asciidoctor-version }}
         
       - name: Run Asciidoctor tests
-        continue-on-error: ${{ matrix.experimental || false }}
         run: npx jest tests/asciidoctor 
