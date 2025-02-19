@@ -123,7 +123,7 @@ Add the extension to your Antora playbook:
 ----
 antora:
   extensions:
-    - require: "asciidoctor-treeview"
+    - require: "asciidoctor-treeview/antora"
 ----
 
 IMPORTANT: Do not add asciidoctor-treeview to `asciidoc.extensions`. This will prevent proper CSS integration.
@@ -359,7 +359,7 @@ The icon name like file.svg will be added as suffix to the given url.
 ----
 antora:
   extensions:
-    - require: "asciidoctor-treeview"
+    - require: "asciidoctor-treeview/antora"
       icon_source: antora # or embedded or jsdelivr
 ----
 
