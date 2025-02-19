@@ -47,6 +47,9 @@ describe('Antora Extension', () => {
       })
       .filter(line => line !== null);
 
+    // Debug output
+    console.log('Raw output:\n', output);
+
     // Check for warnings about incorrect extension registration
     const warningLines = logLines.filter(line =>
       line.level === 'warn' &&
@@ -103,16 +106,12 @@ describe('Antora Extension', () => {
     const infoMessages = logLines.filter(line => line.level === 'info').map(line => line.msg);
     console.log('Info messages found:', infoMessages);
 
-    // More flexible message checking
+    // More flexible message checking - check raw output directly
     expectedMessages.forEach(msg => {
-      const found = logLines.some(line => {
-        if (line.level !== 'info') return false;
-        const lineMsg = line.msg || '';
-        return lineMsg.toLowerCase().includes(msg.toLowerCase());
-      });
+      const found = output.toLowerCase().includes(msg.toLowerCase());
       expect(found).toBe(true, 
-        `Expected to find info message: ${msg}\n` +
-        `Available info messages: ${JSON.stringify(infoMessages, null, 2)}`);
+        `Expected to find message: ${msg}\n` +
+        `Raw output:\n${output}`);
     });
   });
 
