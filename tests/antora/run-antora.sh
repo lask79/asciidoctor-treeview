@@ -20,19 +20,13 @@ ls -l "$1"
 
 echo "=== Running Antora ==="
 
-# In CI, we need to ensure output is not buffered
+# Ensure we capture all output
 if [ "$CI" = "true" ]; then
-  # Run with unbuffered output and explicit logging
-  PYTHONUNBUFFERED=1 npx antora --stacktrace \
-    --log-level=all \
-    --log-format=json \
-    --fetch \
-    --to-dir=public \
-    --urls-preserve-trailing-slash \
-    "$1" 2>&1
+  # CI run with explicit logging
+  ANTORA_LOG_LEVEL=all ANTORA_LOG_FORMAT=json npx antora --stacktrace "$1" 2>&1
 else
   # Regular local run
-  npx antora --stacktrace --log-level=info "$1"
+  ANTORA_LOG_LEVEL=info npx antora --stacktrace "$1" 2>&1
 fi
 
 echo "=== Antora Run Complete ==="
