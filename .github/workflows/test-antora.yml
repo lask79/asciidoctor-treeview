@@ -45,5 +45,7 @@ jobs:
       - name: Run Antora tests
         env:
           ANTORA_LOG_LEVEL: info
-          NODE_DEBUG: '*'
-        run: npx jest tests/antora --verbose
+          DEBUG: antora:*
+        run: |
+          npx jest tests/antora --verbose --detectOpenHandles --forceExit \
+            --config='{"testEnvironment":"node","verbose":true}'
