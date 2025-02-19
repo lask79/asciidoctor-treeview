@@ -84,18 +84,23 @@ toc::[]
 |===
 
 
-== Installation
+== Installation and Integration
 
-```
+=== Basic Installation
+
+Install the extension using npm:
+
+[source,bash]
+----
 npm i asciidoctor-treeview
-```
+----
 
-== Register extension
+=== Integration with Asciidoctor
 
-=== Asciidoctor
+To use the extension with standalone Asciidoctor:
 
-.Asciidoctor
-[source, javascript]
+.Register with Asciidoctor
+[source,javascript]
 ----
 const asciidoctor = require('@asciidoctor/core')()
 const asciidoctorTreeView = require('asciidoctor-treeview')
@@ -103,51 +108,67 @@ const registry = asciidoctor.Extensions.create()
 asciidoctorTreeView.register(registry)
 ----
 
-NOTE: The needed css file is added via `DocInfoProcessor`.
+NOTE: The extension automatically adds required CSS via the `DocInfoProcessor`.
 
-=== Antora
+=== Integration with Antora
 
-==== Antora Playbook
-[source, yaml]
+The extension seamlessly integrates with Antora documentation sites. Follow these steps:
+
+==== 1. Configure Antora Playbook
+
+Add the extension to your Antora playbook:
+
+.antora-playbook.yml
+[source,yaml]
 ----
 antora:
   extensions:
     - require: "asciidoctor-treeview"
 ----
 
-WARNING: Do not add the asciidoctor-treeview to the asciidoc.extensions. It will not work because then the needed css will not be added to the site.
+IMPORTANT: Do not add asciidoctor-treeview to `asciidoc.extensions`. This will prevent proper CSS integration.
 
-==== Add handlebars template
+==== 2. Set Up UI Integration
 
-You have to change 1 file in your Antora UI bundle or by overwriting it via supplemental-ui:
+The extension requires a small modification to your Antora UI bundle to include its styles. You have two options:
 
-* add `{{> treeview-styles }}` to `partials/head-styles.hbs`
+===== Option A: Modify UI Bundle
 
-If you do not want to change your UI bundle or when you use the default ui bundle you can simply put the following lines into `supplemental-ui/partials/head-styles.hbs` next to your `antora playbook`:
+Add the following line to `partials/head-styles.hbs` in your UI bundle:
 
-.head-styles.hbs
+[source,handlebars]
+----
+{{> treeview-styles }}
+----
+
+===== Option B: Use Supplemental UI (Recommended)
+
+If you're using the default UI bundle or prefer not to modify your custom bundle, create a supplemental UI file:
+
+.supplemental-ui/partials/head-styles.hbs
 [source,html]
 ----
 <link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">
 {{> treeview-styles }}
 ----
 
-`{{> treeview-styles }}` will be replaced with the content of the file `treeview-styles.hbs` that provided by this extension.
+The extension provides `treeview-styles.hbs` which includes:
 
-.treeview-styles.hbs
 [source,html]
 ----
 <link rel="stylesheet" href="{{{uiRootPath}}}/css/treeview.css">
 ----
 
-The `treeview.css` file contains some treeview specific styles that are needed to render the code blocks correctly and overrides some styles defined in the https://docs.antora.org/antora-ui-default/[Antora UI Default].
+NOTE: The `treeview.css` file contains styles necessary for proper rendering and overrides some styles from the https://docs.antora.org/antora-ui-default/[Antora UI Default].
 
-=== VSCode
+=== Integration with VSCode
 
-.VSCode
+For VSCode users:
+
+.VSCode Integration
 [source,javascript]
 ----
-// add this to .asciidoctor/lib/asciidoctor-treeview.js when you have turned on the extension
+// Add to .asciidoctor/lib/asciidoctor-treeview.js
 module.exports = require('asciidoctor-treeview')
 ----
 
@@ -399,6 +420,16 @@ Then that line will be marked as a comment.
 --------
 
 == Changelog
+
+=== v1.0.0
+
+* *Improvements*
+** Updated to material-icons-theme version 5.19.0
+** Added tests to validate antora build
+
+* *Fixes*
+** Asciidoctor-treeview plugin no longer works with Antora https://github.com/lask79/asciidoctor-treeview/pull/10[(#10)]
+** material-icon-theme package is not set as a dependency https://github.com/lask79/asciidoctor-treeview/pull/11[(#11)]
 
 === v1.0.0-alpha.7
 * *Features*
