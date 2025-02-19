@@ -65,6 +65,16 @@ describe('Antora Extension', () => {
   });
 
   test('should complete build without fatal errors', () => {
+    // Debug: Print current working directory and file existence
+    console.log('Current working directory:', process.cwd());
+    console.log('Playbook exists:', fs.existsSync(playbookPath));
+    console.log('Playbook absolute path:', path.resolve(playbookPath));
+    
+    // Debug: Print environment variables
+    console.log('Environment variables:', {
+      ANTORA_LOG_LEVEL: process.env.ANTORA_LOG_LEVEL,
+      DEBUG: process.env.DEBUG
+    });
     let output;
     try {
       // Force logging to be enabled
