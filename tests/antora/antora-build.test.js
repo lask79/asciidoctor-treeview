@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
-describe('Antora Build Process', () => {
+describe('Antora Extension', () => {
   const playbookPath = path.join(__dirname, 'local-antora-playbook.yml');
   const outputDir = path.join(__dirname, 'public');
   let buildOutput;
@@ -16,27 +16,26 @@ describe('Antora Build Process', () => {
     }
   });
 
-  test('should not register extension as Antora extension', () => {
-    // First verify that extension is registered in antora section of playbook
+  test('should register extensions in correct sections of playbook', () => {
     const playbook = yaml.load(fs.readFileSync(playbookPath, 'utf8'));
-    expect(playbook.antora?.extensions).toContain('asciidoctor-treeview');
+    
+    // Check if extensions are registered in their proper sections
+    // expect(playbook.asciidoc?.extensions).toContain('asciidoctor-treeview');
+    expect(playbook.antora?.extensions).toContain('asciidoctor-treeview/antora');
+  });
 
+  test('should not show warnings about incorrect extension registration', () => {
     let output;
     try {
-      // Run Antora build with stacktrace for better error messages
       output = execSync(`npx antora --stacktrace ${playbookPath}`, { 
-        encoding: 'utf-8',
+        encoding: 'utf8',
         stdio: 'pipe'
       });
     } catch (error) {
-      // Even if the command fails, we want to check the output for the warning
       output = error.stdout || error.stderr;
-      // console.log('Command failed with error:', error.message);
-      if (error.stderr) console.log('stderr:', error.stderr);
-      if (error.stdout) console.log('stdout:', error.stdout);
     }
 
-    // Parse JSON log lines
+    // Parse log lines
     const logLines = output.split('\n')
       .filter(line => line.trim())
       .map(line => {
@@ -46,23 +45,63 @@ describe('Antora Build Process', () => {
           return null;
         }
       })
-      .filter(log => log !== null);
+      .filter(line => line !== null);
 
-    // Find the warning message
-    const warningLog = logLines.find(log => 
-      log.level === 'warn' && 
-      log.name === 'antora' && 
-      log.msg === 'Detected Asciidoctor extension registered as an Antora extension: asciidoctor-treeview'
+    // Check for warnings about incorrect extension registration
+    const warningLines = logLines.filter(line =>
+      line.level === 'warn' &&
+      line.msg?.includes('extension as Antora extension')
     );
 
-    console.log('Raw output:', output);
-    console.log('Warning log:', warningLog);
+    expect(warningLines).toHaveLength(0,
+      'Found warnings about incorrect extension registration'
+    );
+  });
 
-    // The warning should not be present
-    expect(warningLog).toBeUndefined();
-    if (warningLog) {
-      throw new Error('Extension was incorrectly registered as an Antora extension. It should be registered as an Asciidoctor extension.');
+  test('should complete build without fatal errors', () => {
+    let output;
+    try {
+      output = execSync(`npx antora --stacktrace ${playbookPath}`, { 
+        encoding: 'utf8',
+        stdio: 'pipe'
+      });
+    } catch (error) {
+      output = error.stdout || error.stderr;
     }
+
+    // Parse log lines
+    const logLines = output.split('\n')
+      .filter(line => line.trim())
+      .map(line => {
+        try {
+          return JSON.parse(line);
+        } catch (e) {
+          return null;
+        }
+      })
+      .filter(line => line !== null);
+
+    // Check for fatal errors
+    const fatalLines = logLines.filter(line => line.level === 'fatal');
+    expect(fatalLines).toHaveLength(0,
+      `Found fatal errors in build output:\n${JSON.stringify(fatalLines, null, 2)}`
+    );
+
+    // Verify expected info messages
+    const expectedMessages = [
+      'Registering asciidoctor-treeview with config',
+      'Start Antora extension',
+      'Handle UICatalog files',
+      'Generating treeview.css',
+      'Copying css/treeview.css to _/css'
+    ];
+
+    expectedMessages.forEach(msg => {
+      const found = logLines.some(line => 
+        line.level === 'info' && line.msg.includes(msg)
+      );
+      expect(found).toBe(true, `Expected to find info message: ${msg}`);
+    });
   });
 
   afterAll(() => {

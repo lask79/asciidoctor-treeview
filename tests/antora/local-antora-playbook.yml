@@ -28,4 +28,4 @@ runtime:
 
 antora:
   extensions:
-    - "asciidoctor-treeview"
+    - "asciidoctor-treeview/antora"
