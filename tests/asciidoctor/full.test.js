@@ -3,8 +3,9 @@ const matchers = require('jest-extended')
 expect.extend(matchers)
 const path = require('path')
 
-const asciidoctor = require('@asciidoctor/core')()
-const asciidoctorTreeView = require('../lib/index.js')
+const Asciidoctor = require('@asciidoctor/core')
+const asciidoctor = Asciidoctor()
+const asciidoctorTreeView = require('../../lib/index.js')
 
 describe('Full Test', () => {
   it('should render full page', () => {

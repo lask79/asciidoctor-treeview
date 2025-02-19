@@ -5,8 +5,9 @@ const { describe, it, expect } = require('@jest/globals')
 const matchers = require('jest-extended')
 expect.extend(matchers)
 
-const asciidoctor = require('@asciidoctor/core')()
-const asciidoctorTreeView = require('../lib/index.js')
+const Asciidoctor = require('@asciidoctor/core')
+const asciidoctor = Asciidoctor()
+const asciidoctorTreeView = require('../../lib/index.js')
 
 const example3Result = 'README.adoc'
 

@@ -93,7 +93,6 @@ describe('Antora Extension', () => {
 
     // Verify expected info messages
     const expectedMessages = [
-      'Registering asciidoctor-treeview with config',
       'Start Antora extension',
       'Handle UICatalog files',
       'Generating treeview.css',

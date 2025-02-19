@@ -43,4 +43,4 @@ jobs:
           npm install --no-save @asciidoctor/core@~2.2
         
       - name: Run Antora tests
-        run: npm test -- -t "Antora"  # Run only tests with "Antora" in their name
+        run: npx jest tests/antora 
