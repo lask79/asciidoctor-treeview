@@ -40,7 +40,6 @@
   "devDependencies": {
     "@antora/cli": "^3.1.10",
     "@antora/site-generator": "^3.1.10",
-    "@asciidoctor/core": "~2.2",
     "@jest/globals": "^29.7.0",
     "cross-env": "^7.0.3",
     "eslint": "~7.32",

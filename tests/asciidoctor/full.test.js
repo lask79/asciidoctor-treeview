@@ -3,8 +3,16 @@ const matchers = require('jest-extended')
 expect.extend(matchers)
 const path = require('path')
 
-const Asciidoctor = require('@asciidoctor/core')
-const asciidoctor = Asciidoctor()
+const asciidoctorModule = require('@asciidoctor/core')
+const asciidoctor = (() => {
+  try {
+    // Try Asciidoctor 3.0 initialization
+    return asciidoctorModule.default()
+  } catch (e) {
+    // Fallback to Asciidoctor 2.x initialization
+    return asciidoctorModule()
+  }
+})()
 const asciidoctorTreeView = require('../../lib/index.js')
 
 describe('Full Test', () => {
