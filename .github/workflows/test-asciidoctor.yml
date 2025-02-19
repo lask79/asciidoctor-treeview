@@ -1,4 +1,4 @@
-name: Test Asciidoctor Versions
+name: Test against Asciidoctor Versions
 
 on:
   push:
