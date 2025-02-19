@@ -42,24 +42,10 @@ jobs:
           # Ensure Asciidoctor is at ~2.2 as required by Antora
           npm install --no-save @asciidoctor/core@~2.2
         
-      - name: Test Antora directly
-        run: |
-          chmod +x tests/antora/run-antora.sh
-          ./tests/antora/run-antora.sh tests/antora/local-antora-playbook.yml || true
-
       - name: Run Antora tests
-        env:
-          ANTORA_LOG_LEVEL: info
-          DEBUG: antora:*
-          NODE_ENV: test
         run: |
-          # Print debug info
-          echo "Working directory: $(pwd)"
-          echo "Node version: $(node --version)"
-          echo "NPM version: $(npm --version)"
-          echo "Antora version: $(npx antora --version)"
+          # Make the test script executable
+          chmod +x tests/antora/run-antora.sh
           
-          # Run tests with full output
-          npx jest tests/antora --verbose --detectOpenHandles --forceExit \
-            --config='{"testEnvironment":"node","verbose":true}' \
-            --no-cache --runInBand
+          # Run tests
+          npx jest tests/antora --verbose

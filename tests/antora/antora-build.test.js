@@ -27,12 +27,10 @@ describe('Antora Extension', () => {
   test('should not show warnings about incorrect extension registration', () => {
     let output;
     try {
-      // Force logging to be enabled
-      const env = { ...process.env, ANTORA_LOG_LEVEL: 'info' };
-      output = execSync(`npx antora --stacktrace --log-level=info ${playbookPath}`, { 
+      // Use the shell script that we know works
+      output = execSync(`${__dirname}/run-antora.sh ${playbookPath}`, { 
         encoding: 'utf8',
-        stdio: 'pipe',
-        env
+        stdio: 'pipe'
       });
     } catch (error) {
       output = error.stdout || error.stderr;
@@ -77,12 +75,10 @@ describe('Antora Extension', () => {
     });
     let output;
     try {
-      // Force logging to be enabled
-      const env = { ...process.env, ANTORA_LOG_LEVEL: 'info' };
-      output = execSync(`npx antora --stacktrace --log-level=info ${playbookPath}`, { 
+      // Use the shell script that we know works
+      output = execSync(`${__dirname}/run-antora.sh ${playbookPath}`, { 
         encoding: 'utf8',
-        stdio: 'pipe',
-        env
+        stdio: 'pipe'
       });
     } catch (error) {
       output = error.stdout || error.stderr;
