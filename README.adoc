@@ -421,6 +421,8 @@ Then that line will be marked as a comment.
 
 == Changelog
 
+:!sectnums:
+
 === v1.0.0
 
 * *Improvements*
