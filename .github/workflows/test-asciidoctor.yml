@@ -1,0 +1,44 @@
+name: Test Asciidoctor Versions
+
+on:
+  push:
+    branches: [ '**' ]
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test-asciidoctor.yml'
+  pull_request:
+    branches: [ '**' ]
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test-asciidoctor.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+        asciidoctor-version: ['~2.2', '~3.0']
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Install specific Asciidoctor version
+        run: npm install @asciidoctor/core@${{ matrix.asciidoctor-version }}
+        
+      - name: Run Asciidoctor tests
+        run: npm test -- -t "^(?!.*Antora).*$"  # Run tests that don't include "Antora" in their name

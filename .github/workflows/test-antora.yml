@@ -1,0 +1,47 @@
+name: Test Antora Versions
+
+on:
+  push:
+    branches: [ '**' ]
+    paths:
+      - 'lib/antora/**'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test-antora.yml'
+  pull_request:
+    branches: [ '**' ]
+    paths:
+      - 'lib/antora/**'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test-antora.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+        antora-version: ['3.1.10', '3.2.0-alpha.8']
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Install specific Antora version
+        run: |
+          npm install @antora/cli@${{ matrix.antora-version }} @antora/site-generator@${{ matrix.antora-version }}
+          # Ensure Asciidoctor is at ~2.2 as required by Antora
+          npm install @asciidoctor/core@~2.2
+        
+      - name: Run Antora tests
+        run: npm test -- -t "Antora"  # Run only tests with "Antora" in their name
