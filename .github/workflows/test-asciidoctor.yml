@@ -1,0 +1,53 @@
+name: Test against Asciidoctor Versions
+
+on:
+  push:
+    branches: [ '**' ]
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test-asciidoctor.yml'
+  pull_request:
+    branches: [ '**' ]
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test-asciidoctor.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        include:
+          # Test with Asciidoctor 2.2
+          - asciidoctor-version: '~2.2'
+            package-name: '@asciidoctor/core'
+            node-version: '18.x'
+          - asciidoctor-version: '~2.2'
+            package-name: '@asciidoctor/core'
+            node-version: '20.x'
+          - asciidoctor-version: '~2.2'
+            package-name: '@asciidoctor/core'
+            node-version: '22.x'
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Install specific Asciidoctor version
+        run: npm install --no-save ${{ matrix.package-name }}@${{ matrix.asciidoctor-version }}
+        
+      - name: Run Asciidoctor tests
+        run: npx jest tests/asciidoctor 

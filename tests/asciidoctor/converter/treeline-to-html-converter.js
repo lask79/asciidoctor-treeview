@@ -2,7 +2,7 @@ const { describe, it, expect, beforeEach } = require('@jest/globals')
 const matchers = require('jest-extended')
 expect.extend(matchers)
 
-const TreeLine = require('../../lib/parser/treeline')
+const TreeLine = require('../../../lib/parser/treeline')
 
 describe('TreeLineToHtmlConverter', () => {
   it('throws error when empty string is passed', () => {

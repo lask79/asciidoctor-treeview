@@ -2,8 +2,8 @@ const { describe, it, expect, beforeEach } = require('@jest/globals')
 const matchers = require('jest-extended')
 expect.extend(matchers)
 
-const TreeLine = require('../../lib/parser/treeline')
-const SymbolParser = require('../../lib/parser/symbol-parser')
+const TreeLine = require('../../../lib/parser/treeline')
+const SymbolParser = require('../../../lib/parser/symbol-parser')
 
 describe('SymbolParser', () => {
   describe('General features', () => {
