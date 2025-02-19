@@ -34,10 +34,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci || npm install
         
       - name: Install specific Asciidoctor version
-        run: npm install @asciidoctor/core@${{ matrix.asciidoctor-version }}
+        run: npm install --no-save @asciidoctor/core@${{ matrix.asciidoctor-version }}
         
       - name: Run Asciidoctor tests
         run: npm test -- -t "^(?!.*Antora).*$"  # Run tests that don't include "Antora" in their name

@@ -34,13 +34,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci || npm install
         
       - name: Install specific Antora version
         run: |
-          npm install @antora/cli@${{ matrix.antora-version }} @antora/site-generator@${{ matrix.antora-version }}
+          npm install --no-save @antora/cli@${{ matrix.antora-version }} @antora/site-generator@${{ matrix.antora-version }}
           # Ensure Asciidoctor is at ~2.2 as required by Antora
-          npm install @asciidoctor/core@~2.2
+          npm install --no-save @asciidoctor/core@~2.2
         
       - name: Run Antora tests
         run: npm test -- -t "Antora"  # Run only tests with "Antora" in their name
